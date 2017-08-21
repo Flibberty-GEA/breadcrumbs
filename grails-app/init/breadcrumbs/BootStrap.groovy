@@ -4,10 +4,9 @@ import groovy.json.JsonSlurper
 
 class BootStrap {
     def init = { servletContext ->
-//        def data = new JsonSlurper().parse(new File("/grails-app/assets/resources/Articles.json")) //Ubuntu
-        def data = new JsonSlurper().parse(new File("grails-app\\assets\\resources\\Articles.json")) //Windows
+        def data = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("grails-app\\assets\\resources\\Articles.json")))
         data.each{
-            Article article = new breadcrumbs.Article(it)
+            Article article = new Article(it)
             article.save(failOnError:true, flush: true)
         }
     }

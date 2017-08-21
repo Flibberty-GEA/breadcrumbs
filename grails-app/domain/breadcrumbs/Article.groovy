@@ -9,10 +9,14 @@ class Article {
     String publicationDate
     String author
 
+    static mapping = {
+        content type: "text"
+    }
+
     static constraints = {
         title nullable: false
-        content bindable: false
+        content nullable: false
         publicationDate nullable: false
-        author bindable: false
+        author nullable: false
     }
 }
