@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "country": "Uganda",
+    "city": "Santarcangelo di Romagna"
+  },
+  {
+    "id": 2,
+    "country": "Israel",
+    "city": "New Plymouth"
+  },
+  {
+    "id": 3,
+    "country": "Latvia",
+    "city": "Purranque"
+  },
+  {
+    "id": 4,
+    "country": "Saint Lucia",
+    "city": "Meeffe"
+  },
+  {
+    "id": 5,
+    "country": "Laos",
+    "city": "Wimbledon"
+  },
+  {
+    "id": 6,
+    "country": "Slovenia",
+    "city": "Rangiora"
+  },
+  {
+    "id": 7,
+    "country": "Italy",
+    "city": "Mont-de-Marsan"
+  },
+  {
+    "id": 8,
+    "country": "Sint Maarten",
+    "city": "Sterrebeek"
+  },
+  {
+    "id": 9,
+    "country": "Korea, North",
+    "city": "Mal"
+  },
+  {
+    "id": 10,
+    "country": "Mexico",
+    "city": "Arsiè"
+  },
+  {
+    "id": 11,
+    "country": "Grenada",
+    "city": "Zelzate"
+  },
+  {
+    "id": 12,
+    "country": "Marshall Islands",
+    "city": "Westerlo"
+  },
+  {
+    "id": 13,
+    "country": "Niger",
+    "city": "Wabamun"
+  },
+  {
+    "id": 14,
+    "country": "Virgin Islands, British",
+    "city": "Kansas City"
+  },
+  {
+    "id": 15,
+    "country": "China",
+    "city": "Portsmouth"
+  },
+  {
+    "id": 16,
+    "country": "United Arab Emirates",
+    "city": "Zellik"
+  },
+  {
+    "id": 17,
+    "country": "Portugal",
+    "city": "Juazeiro do Norte"
+  },
+  {
+    "id": 18,
+    "country": "Portugal",
+    "city": "Porirua"
+  },
+  {
+    "id": 19,
+    "country": "Panama",
+    "city": "Zwijnaarde"
+  },
+  {
+    "id": 20,
+    "country": "Germany",
+    "city": "Alexandra"
+  },
+  {
+    "id": 21,
+    "country": "United Kingdom (Great Britain)",
+    "city": "Negrete"
+  },
+  {
+    "id": 22,
+    "country": "Turks and Caicos Islands",
+    "city": "Saint-Laurent"
+  },
+  {
+    "id": 23,
+    "country": "Zambia",
+    "city": "Wyoming"
+  },
+  {
+    "id": 24,
+    "country": "Guam",
+    "city": "Springfield"
+  },
+  {
+    "id": 25,
+    "country": "Saint Pierre and Miquelon",
+    "city": "Milazzo"
+  }
+]
