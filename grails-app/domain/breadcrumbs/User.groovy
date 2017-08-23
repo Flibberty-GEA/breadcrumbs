@@ -1,6 +1,8 @@
 package breadcrumbs
 
 import grails.rest.Resource
+import grails.util.Holders
+
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -12,14 +14,24 @@ class User {
     String surname
     String email
     Date birthday
-    boolean role
-    LocalDateTime createdDate
+    Role role
+
+    Address address
+//    LocalDateTime createdDate
+
+    static hasMany = [articles: Article, comments: Comment]
+
+    static mapping = {
+        articles column: 'author_id'
+        comments column: 'author_id'
+//        address column: 'address_id' // default 'address_id'
+    }
 
     static constraints = {
         username nullable: false
         password nullable: false
         email nullable: false
         role nullable: false
-        createdDate nullable: false
+//        createdDate nullable: false
     }
 }

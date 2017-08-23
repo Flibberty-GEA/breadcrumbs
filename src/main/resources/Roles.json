@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "ADMINISTRATOR",
+    "description": "Full access, system user",
+    "isFullPowers": 1
+  },
+  {
+    "id": 2,
+    "name": "POWER_USER",
+    "description": "Access to all the screens, not manager",
+    "isFullPowers": 0
+  },
+  {
+    "id": 3,
+    "name": "USER",
+    "description": null,
+    "isFullPowers": 0
+  }
+]

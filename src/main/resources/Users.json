@@ -4,11 +4,12 @@
     "username": "User",
     "password": "pass",
     "email": "sit.amet.orci@eleifendvitaeerat.org",
-    "role": 0,
+    "role": 3,
     "name": "Evangeline",
     "surname": "Tate",
-    "birthday": "1999-01-18",
-    "createdDate": "2016-05-10T10:59:21Z"
+    "birth": "1999-01-18",
+    "createdDate": "2016-05-10T10:59:21Z",
+    "addressId": 1
   },
   {
     "id": 2,
@@ -18,62 +19,69 @@
     "role": 1,
     "name": "Ralph",
     "surname": "Ratliff",
-    "birthday": "1994-06-03",
-    "createdDate": "2017-01-29T08:53:30Z"
+    "birth": "1994-06-03",
+    "createdDate": "2017-01-29T08:53:30Z",
+    "addressId": 1
   },
   {
     "id": 3,
     "username": "magna",
     "password": "lacus",
     "email": "ipsum.dolor@euplacerateget.net",
-    "role": 0,
+    "role": 3,
     "name": "Inez",
     "surname": "Mullen",
-    "birthday": "1989-05-07",
-    "createdDate": "2017-03-26T18:46:56Z"
+    "birth": "1989-05-07",
+    "createdDate": "2017-03-26T18:46:56Z",
+    "addressId": 6
+
   },
   {
     "id": 4,
     "username": "mauris",
     "password": "Donec",
     "email": "Fusce@fringillamilacinia.com",
-    "role": 0,
+    "role": 3,
     "name": "Odessa",
     "surname": "Norton",
-    "birthday": "1995-04-26",
-    "createdDate": "2015-08-12T00:20:58Z"
+    "birth": "1995-04-26",
+    "createdDate": "2015-08-12T00:20:58Z",
+    "addressId": null
   },
   {
     "id": 5,
     "username": "nulla",
     "password": "luctus.",
     "email": "erat@antedictum.co.uk",
-    "role": 0,
+    "role": 3,
     "name": "Leslie",
     "surname": "Sharp",
-    "birthday": "1987-04-26",
-    "createdDate": "2015-10-25T17:52:02Z"
+    "birth": "1987-04-26",
+    "createdDate": "2015-10-25T17:52:02Z",
+    "addressId": null
   },
   {
     "id": 6,
     "username": "nec,",
     "password": "Integer",
     "email": "hendrerit.a@non.com",
-    "role": 0,
+    "role": 3,
     "name": "Cheyenne",
     "surname": "Carver",
-    "birthday": "1986-07-08",
-    "createdDate": "2015-11-18T21:33:36Z"
+    "birth": "1986-07-08",
+    "createdDate": "2015-11-18T21:33:36Z",
+    "addressId": null
   },
   {
     "id": 7,
     "username": "Integer",
     "password": "vestibulum",
     "email": "diam@quam.net",
-    "role": 0,
+    "role": 2,
     "name": "Paula",
     "surname": "Baxter",
-    "birthday": "1985-04-15",
-    "createdDate": "2016-01-20T19:17:01Z"
+    "birth": "1985-04-15",
+    "createdDate": "2016-01-20T19:17:01Z",
+    "addressId": null
   }
 ]

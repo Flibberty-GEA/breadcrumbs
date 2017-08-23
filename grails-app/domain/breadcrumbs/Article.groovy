@@ -1,27 +1,23 @@
 package breadcrumbs
 
 import grails.rest.Resource
-import java.time.LocalDateTime
 
 @Resource(uri = '/article', formats = ["json"])
-class Article {
+class Article extends BasePost {
+
     String title
-    String description
-    String content
-    Long authorId
-    LocalDateTime publicationDate
-    LocalDateTime editedDate
-    Long editedBy
+//    String content
+
+    static belongsTo = Tag
+    static hasMany = [tags: Tag, comments: Comment]
 
     static mapping = {
-        content type: "text"
-        description type: "text"
+//        content type: "text"
+        comments column: 'Article_Id'
     }
 
     static constraints = {
         title nullable: false
-        description nullable: false
-        content nullable: false
-        authorId nullable: false
+//        content nullable: false
     }
 }

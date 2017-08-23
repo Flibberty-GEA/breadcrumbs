@@ -1,12 +1,13 @@
 [
   {
     "id": 1,
-    "authorId": 3,
-    "articleId": 12,
     "text": "vitae aliquam eros turpis non enim. Mauris quis turpis vitae",
     "postedDate": "2015-11-21 19:52:21",
-    "editedDate": null,
-    "editedBy": null
+    "authorId": 3,
+    "updatedBy": 3,
+
+    "articleId": 1,
+    "commentId": null
   },
   {
     "id": 2,
@@ -14,8 +15,9 @@
     "articleId": 8,
     "text": "Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed",
     "postedDate": "2014-08-01 00:35:22",
-    "editedDate": "2017-06-07 12:08:55",
-    "editedBy": 3
+
+    "updatedBy": 3,
+    "commentId": null
   },
   {
     "id": 3,
@@ -23,26 +25,29 @@
     "articleId": 7,
     "text": "ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor.",
     "postedDate": "2016-04-25 23:07:03",
-    "editedDate": "2017-04-29 20:57:45",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 4,
     "authorId": 3,
-    "articleId": 12,
+    "articleId": 10,
     "text": "mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin",
     "postedDate": "2014-10-03 02:09:59",
-    "editedDate": null,
-    "editedBy": null
+
+    "updatedBy": 3,
+    "commentId": null
   },
   {
     "id": 5,
     "authorId": 2,
-    "articleId": 11,
+    "articleId": 10,
     "text": "Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus",
     "postedDate": "2015-03-24 23:26:19",
-    "editedDate": "2017-04-17 02:29:58",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 6,
@@ -50,26 +55,29 @@
     "articleId": 6,
     "text": "dictum mi, ac mattis velit justo nec ante. Maecenas mi",
     "postedDate": "2015-01-27 15:35:33",
-    "editedDate": "2016-10-30 08:00:09",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 7,
     "authorId": 2,
-    "articleId": 11,
+    "articleId": 1,
     "text": "nec tempus scelerisque, lorem ipsum sodales purus, in molestie tortor",
     "postedDate": "2015-06-13 09:40:15",
-    "editedDate": "2016-11-28 08:57:39",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": 1
   },
   {
     "id": 8,
     "authorId": 2,
-    "articleId": 11,
+    "articleId": 10,
     "text": "tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum",
     "postedDate": "2015-02-07 14:44:43",
-    "editedDate": "2017-01-26 11:54:31",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 9,
@@ -77,8 +85,9 @@
     "articleId": 5,
     "text": "sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue",
     "postedDate": "2015-01-16 09:01:40",
-    "editedDate": "2017-06-19 19:25:52",
-    "editedBy": 4
+
+    "updatedBy": 4,
+    "commentId": null
   },
   {
     "id": 10,
@@ -86,8 +95,9 @@
     "articleId": 8,
     "text": "sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus",
     "postedDate": "2014-10-06 11:06:01",
-    "editedDate": null,
-    "editedBy": null
+
+    "updatedBy": 5,
+    "commentId": null
   },
   {
     "id": 11,
@@ -95,8 +105,9 @@
     "articleId": 6,
     "text": "sit amet diam eu dolor egestas rhoncus. Proin nisl sem,",
     "postedDate": "2015-08-17 15:23:57",
-    "editedDate": "2017-07-30 17:08:33",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 12,
@@ -104,8 +115,9 @@
     "articleId": 5,
     "text": "tellus non magna. Nam ligula elit, pretium et, rutrum non,",
     "postedDate": "2015-08-01 16:39:33",
-    "editedDate": "2017-05-20 09:23:38",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 13,
@@ -113,26 +125,29 @@
     "articleId": 7,
     "text": "sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo",
     "postedDate": "2016-02-15 20:30:03",
-    "editedDate": "2017-06-04 06:10:19",
-    "editedBy": 4
+
+    "updatedBy": 4,
+    "commentId": null
   },
   {
     "id": 14,
     "authorId": 2,
-    "articleId": 12,
+    "articleId": 10,
     "text": "convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum",
     "postedDate": "2014-08-20 15:23:35",
-    "editedDate": null,
-    "editedBy": null
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 15,
     "authorId": 5,
-    "articleId": 11,
+    "articleId": 10,
     "text": "sit amet diam eu dolor egestas rhoncus. Proin nisl sem,",
     "postedDate": "2015-08-16 01:54:32",
-    "editedDate": null,
-    "editedBy": null
+
+    "updatedBy": 2,
+    "commentId": 14
   },
   {
     "id": 16,
@@ -140,8 +155,9 @@
     "articleId": 8,
     "text": "dapibus id, blandit at, nisi. Cum sociis natoque penatibus et",
     "postedDate": "2016-06-28 15:47:58",
-    "editedDate": null,
-    "editedBy": null
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 17,
@@ -149,17 +165,19 @@
     "articleId": 8,
     "text": "erat vitae risus. Duis a mi fringilla mi lacinia mattis.",
     "postedDate": "2015-03-31 10:08:51",
-    "editedDate": "2017-01-03 21:03:33",
-    "editedBy": 1
+
+    "updatedBy": 1,
+    "commentId": null
   },
   {
     "id": 18,
     "authorId": 5,
-    "articleId": 12,
+    "articleId": 10,
     "text": "erat. Vivamus nisi. Mauris nulla. Integer urna. Vivamus molestie dapibus",
     "postedDate": "2014-10-08 03:19:09",
-    "editedDate": "2017-02-22 04:14:11",
-    "editedBy": 5
+
+    "updatedBy": 5,
+    "commentId": null
   },
   {
     "id": 19,
@@ -167,8 +185,9 @@
     "articleId": 8,
     "text": "faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend.",
     "postedDate": "2015-09-19 21:33:25",
-    "editedDate": "2017-03-20 15:20:03",
-    "editedBy": 1
+
+    "updatedBy": 1,
+    "commentId": null
   },
   {
     "id": 20,
@@ -176,26 +195,29 @@
     "articleId": 5,
     "text": "sem mollis dui, in sodales elit erat vitae risus. Duis",
     "postedDate": "2016-05-19 11:35:06",
-    "editedDate": "2016-11-24 13:49:05",
-    "editedBy": 1
+
+    "updatedBy": 1,
+    "commentId": null
   },
   {
     "id": 21,
     "authorId": 5,
-    "articleId": 12,
+    "articleId": 10,
     "text": "urna. Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim.",
     "postedDate": "2015-09-23 20:49:35",
-    "editedDate": "2017-03-23 08:47:54",
-    "editedBy": 5
+
+    "updatedBy": 5,
+    "commentId": null
   },
   {
     "id": 22,
     "authorId": 2,
-    "articleId": 12,
+    "articleId": 10,
     "text": "et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum",
     "postedDate": "2014-10-27 04:22:02",
-    "editedDate": "2017-07-12 17:20:56",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 23,
@@ -203,8 +225,9 @@
     "articleId": 6,
     "text": "eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed",
     "postedDate": "2015-12-08 05:32:54",
-    "editedDate": "2017-04-17 20:58:04",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 24,
@@ -212,8 +235,9 @@
     "articleId": 9,
     "text": "Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec",
     "postedDate": "2016-01-06 18:18:49",
-    "editedDate": "2017-04-11 04:05:27",
-    "editedBy": 4
+
+    "updatedBy": 4,
+    "commentId": null
   },
   {
     "id": 25,
@@ -221,26 +245,29 @@
     "articleId": 5,
     "text": "laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi",
     "postedDate": "2015-11-09 01:31:14",
-    "editedDate": "2016-12-10 16:44:32",
-    "editedBy": 1
+
+    "updatedBy": 1,
+    "commentId": null
   },
   {
     "id": 26,
     "authorId": 2,
-    "articleId": 12,
+    "articleId": 10,
     "text": "ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed",
     "postedDate": "2015-06-25 19:49:57",
-    "editedDate": "2017-04-12 18:46:39",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 27,
     "authorId": 3,
-    "articleId": 11,
+    "articleId": 10,
     "text": "aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae",
     "postedDate": "2015-06-13 20:19:44",
-    "editedDate": "2016-10-24 07:43:19",
-    "editedBy": 3
+
+    "updatedBy": 3,
+    "commentId": null
   },
   {
     "id": 28,
@@ -248,25 +275,28 @@
     "articleId": 6,
     "text": "volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis.",
     "postedDate": "2015-02-08 22:45:29",
-    "editedDate": "2017-07-14 15:22:30",
-    "editedBy": 2
+
+    "updatedBy": 2,
+    "commentId": null
   },
   {
     "id": 29,
     "authorId": 4,
-    "articleId": 12,
+    "articleId": 10,
     "text": "ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor.",
     "postedDate": "2016-05-09 01:27:28",
-    "editedDate": "2017-03-05 22:12:37",
-    "editedBy": 4
+
+    "updatedBy": 4,
+    "commentId": null
   },
   {
     "id": 30,
     "authorId": 3,
-    "articleId": 12,
+    "articleId": 10,
     "text": "luctus, ipsum leo elementum sem, vitae aliquam eros turpis non",
     "postedDate": "2015-04-11 03:35:23",
-    "editedDate": "2016-12-26 04:51:57",
-    "editedBy": 3
+
+    "updatedBy": 3,
+    "commentId": 14
   }
 ]
