@@ -13,7 +13,6 @@ class Article extends BasePost {
     static mapping = {
 //        content type: "text"
         comments column: 'article_id'
-        subs joinTable: 'SUB_ASSOCIATIONS'
         tags joinTable: 'TAGS_ARTICLES_ASSOCIATIONS'
     }
 
