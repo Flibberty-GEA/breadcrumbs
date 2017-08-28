@@ -6,9 +6,7 @@ import grails.rest.Resource
 class Comment extends BasePost{
 
     Article article
-    Long commentId
+    Long targetCommentId
 
-    static constraints = {
-        article column: 'Article_Id'
-    }
+    static belongsTo = [article: Article]
 }

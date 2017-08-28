@@ -25,4 +25,17 @@ class UserSpec extends Specification {
         user.age == 23
     }
 
+    void "test deleta User"() {
+        expect:
+//        User user = User.get(2)
+//        println "!!!!! user $user"
+//        user.delete(flush: true)
+//        User user2 = User.get(2)
+//        println "!!!!! user $user2"
+//        def users = User.list()
+//        println "!!!!! users $users"
+        true != false
+
+    }
+
 }

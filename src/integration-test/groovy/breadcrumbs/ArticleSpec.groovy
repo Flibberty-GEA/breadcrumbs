@@ -45,4 +45,10 @@ class ArticleSpec extends Specification {
         tag.name == 'new name'
 
     }
+
+    void "test delete Article"() {
+        expect:"fix me"
+        true != false
+    }
+
 }

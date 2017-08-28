@@ -18,17 +18,12 @@ class User {
     String email
     Date birthday
     Role role
-
     Address address
-    static hasMany = [subs: Article, articles: Article, comments: Comment]
+
+    static hasMany = [comments: Comment, articles: Article]
 
     static mapping = {
         email email: true
-        articles column: 'author_id'
-
-        subs joinTable: [name: 'SUB_ASSOCIATIONS', key: 'user_id', column: 'article_id']
-        comments column: 'author_id'
-//        address column: 'address_id' // default 'address_id'
     }
 
     static constraints = {

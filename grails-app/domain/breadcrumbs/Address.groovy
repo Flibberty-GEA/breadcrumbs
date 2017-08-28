@@ -15,5 +15,6 @@ class Address {
     }
 
     static constraints = {
+        country nullable: false
     }
 }

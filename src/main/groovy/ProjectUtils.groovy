@@ -23,10 +23,10 @@ class ProjectUtils {
 
     private static boolean isWin(){
         if (System.properties['os.name'].toString().toLowerCase().contains('windows')) {
-            println "it's Windows"
+//            println "it's Windows"
             return true
         } else {
-            println "it's not Windows"
+//            println "it's not Windows"
             return false
         }
     }

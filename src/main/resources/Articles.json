@@ -3,7 +3,7 @@
     "id": 1,
     "text": "nisi magna sed dui. Fusce aliquam, enim nec tempus scelerisque,",
     "publicationDate": "2013-09-11 16:29:20",
-    "authorId": 2,
+    "userId": 2,
     "updatedBy": 2,
 
     "title": "ut, molestie in, tempus eu,",
@@ -15,7 +15,7 @@
     "text": "sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam",
     "content": "molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. Duis sit amet diam eu",
     "publicationDate": "2013-10-03 02:04:10",
-    "authorId": 1,
+    "userId": 1,
     "updatedBy": 1
   },
   {
@@ -23,7 +23,7 @@
     "title": "nec orci. Donec nibh. Quisque",
     "text": "amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",
     "content": "vitae dolor. Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros",
-    "authorId": 2,
+    "userId": 2,
     "publicationDate": "2013-09-13 02:12:55",
     "updatedBy": 2
   },
@@ -32,7 +32,7 @@
     "title": "enim diam vel arcu. Curabitur",
     "text": "vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor",
     "content": "vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet",
-    "authorId": 4,
+    "userId": 4,
     "publicationDate": "2013-08-17 00:01:04",
     "updatedBy": 2
   },
@@ -41,7 +41,7 @@
     "title": "pharetra, felis eget varius ultrices,",
     "text": "non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec",
     "content": "Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in lobortis tellus justo sit amet",
-    "authorId": 3,
+    "userId": 3,
     "publicationDate": "2013-09-12 12:58:36",
     "updatedBy": 3
   },
@@ -50,7 +50,7 @@
     "title": "elementum sem, vitae aliquam eros",
     "text": "Aenean sed pede nec ante blandit viverra. Donec tempus, lorem",
     "content": "mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor",
-    "authorId": 1,
+    "userId": 1,
     "publicationDate": "2013-09-24 02:41:48",
     "updatedBy": 1
   },
@@ -59,7 +59,7 @@
     "title": "ac, feugiat non, lobortis quis,",
     "text": "blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci lacus",
     "content": "ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum",
-    "authorId": 4,
+    "userId": 4,
     "publicationDate": "2013-09-25 14:56:15",
     "updatedBy": 2
   },
@@ -68,7 +68,7 @@
     "title": "Vestibulum accumsan neque et nunc.",
     "text": "Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu,",
     "content": "nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu,",
-    "authorId": 2,
+    "userId": 2,
     "publicationDate": "2013-08-29 17:12:51",
     "updatedBy": 2
   },
@@ -77,7 +77,7 @@
     "title": "pharetra sed, hendrerit a, arcu.",
     "text": "nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus in",
     "content": "ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam",
-    "authorId": 4,
+    "userId": 4,
     "publicationDate": "2013-09-03 16:20:34",
     "updatedBy": 4
   },
@@ -86,7 +86,7 @@
     "title": "vitae diam. Proin dolor. Nulla",
     "text": "molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare,",
     "content": "id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus",
-    "authorId": 4,
+    "userId": 4,
     "publicationDate": "2013-08-25 13:53:06",
     "updatedBy": 4
   }

@@ -5,13 +5,12 @@ class BasePost {
     String text
     User author
     Date dateCreated
-    User updatedBy
     Date lastUpdated
+    static belongsTo = [author: User]
 
     static mapping = {
 //        autoTimestamp true // default true
         text type: "text"
-        author column: 'author_id'
     }
 
     static constraints = {
