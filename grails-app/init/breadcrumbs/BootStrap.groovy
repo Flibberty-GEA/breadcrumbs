@@ -12,10 +12,6 @@ class BootStrap {
     def grailsApplication
 
     def init = { servletContext ->
-        Map params = grailsApplication.config.dataSource
-        DataSource dataSource = getDataSource(params)
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource)
-
         Object roles = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Roles.json")))
         roles.each{
             Role role = new Role(it)
@@ -57,14 +53,20 @@ class BootStrap {
 
         Object articleTags = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\ArticlesTags.json")))
         articleTags.each{
-            jdbcTemplate.update("INSERT INTO TAGS_ARTICLES_ASSOCIATIONS(article_id, tag_id) VALUES(${it.articleId}, ${it.tagId})")
+            Tag tag = Tag.get(it.tagId)
+            Article article = Article.get(it.articleId)
+            article.addToTags(tag)
+            article.save()
         }
 
         Object subscriptions = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Subscriptions.json")))
         subscriptions.each{
-            jdbcTemplate.update("INSERT INTO SUB_ASSOCIATIONS(article_id, user_id) VALUES(${it.subscriptions}, ${it.subscripters})")
+            User user = User.get(it.subscripters)
+            Article article = Article.get(it.subscriptions)
+            user.addToSubs(article)
+            user.save()
         }
-//
+
 
         Object comments = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Comments.json")))
         comments.each{
@@ -77,8 +79,6 @@ class BootStrap {
             comment.dateCreated = ProjectUtils.parseDateTime(it.postedDate)
             comment.save(failOnError:true, flush: true)
         }
-
-
     }
 
     def destroy = {
