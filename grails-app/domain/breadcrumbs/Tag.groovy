@@ -8,10 +8,11 @@ class Tag {
 
     String name
 
+    static belongsTo = Article
     static hasMany = [articles: Article]
 
     static mapping = {
-//        articles column: 'Article_Id'
+        articles joinTable: 'TAGS_ARTICLES_ASSOCIATIONS'
     }
 
     static constraints = {

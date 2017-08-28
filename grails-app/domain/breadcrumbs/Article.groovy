@@ -7,13 +7,14 @@ class Article extends BasePost {
 
     String title
 //    String content
-
-    static belongsTo = Tag
-    static hasMany = [tags: Tag, comments: Comment]
+    static belongsTo = [subs: User]
+    static hasMany = [subs: User, tags: Tag, comments: Comment]
 
     static mapping = {
 //        content type: "text"
-        comments column: 'Article_Id'
+        comments column: 'article_id'
+        subs joinTable: 'SUB_ASSOCIATIONS'
+        tags joinTable: 'TAGS_ARTICLES_ASSOCIATIONS'
     }
 
     static constraints = {

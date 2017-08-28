@@ -59,8 +59,14 @@ class BootStrap {
 
         Object articleTags = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\ArticlesTags.json")))
         articleTags.each{
-            jdbcTemplate.update("INSERT INTO Tag_Articles(Article_Id, Tag_Id) VALUES(${it.articleId}, ${it.tagId})")
+            jdbcTemplate.update("INSERT INTO TAGS_ARTICLES_ASSOCIATIONS(article_id, tag_id) VALUES(${it.articleId}, ${it.tagId})")
         }
+
+        Object subscriptions = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Subscriptions.json")))
+        subscriptions.each{
+            jdbcTemplate.update("INSERT INTO SUB_ASSOCIATIONS(article_id, user_id) VALUES(${it.subscriptions}, ${it.subscripters})")
+        }
+//
 
         Object comments = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Comments.json")))
         comments.each{

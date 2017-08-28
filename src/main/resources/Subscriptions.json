@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "subscriptions": 6,
+    "subscripters": 3
+  },
+  {
+    "id": 2,
+    "subscriptions": 10,
+    "subscripters": 4
+  },
+  {
+    "id": 3,
+    "subscriptions": 6,
+    "subscripters": 7
+  },
+  {
+    "id": 4,
+    "subscriptions": 2,
+    "subscripters": 7
+  },
+  {
+    "id": 5,
+    "subscriptions": 8,
+    "subscripters": 2
+  },
+  {
+    "id": 6,
+    "subscriptions": 10,
+    "subscripters": 7
+  },
+  {
+    "id": 7,
+    "subscriptions": 8,
+    "subscripters": 1
+  },
+  {
+    "id": 8,
+    "subscriptions": 9,
+    "subscripters": 6
+  },
+  {
+    "id": 9,
+    "subscriptions": 8,
+    "subscripters": 7
+  },
+  {
+    "id": 10,
+    "subscriptions": 1,
+    "subscripters": 6
+  },
+  {
+    "id": 11,
+    "subscriptions": 3,
+    "subscripters": 7
+  }
+]

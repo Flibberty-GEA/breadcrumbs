@@ -17,12 +17,13 @@ class User {
     Role role
 
     Address address
-//    LocalDateTime createdDate
-
-    static hasMany = [articles: Article, comments: Comment]
+    static hasMany = [subs: Article, articles: Article, comments: Comment]
 
     static mapping = {
+        email email: true
         articles column: 'author_id'
+
+        subs joinTable: [name: 'SUB_ASSOCIATIONS', key: 'user_id', column: 'article_id']
         comments column: 'author_id'
 //        address column: 'address_id' // default 'address_id'
     }
@@ -32,6 +33,5 @@ class User {
         password nullable: false
         email nullable: false
         role nullable: false
-//        createdDate nullable: false
     }
 }
