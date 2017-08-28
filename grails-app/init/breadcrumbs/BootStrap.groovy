@@ -5,14 +5,11 @@ import org.springframework.jdbc.core.JdbcTemplate
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource
 import javax.sql.DataSource
-import java.text.*;
-import java.util.*;
+import java.util.*
 
 class BootStrap {
 
     def grailsApplication
-    SimpleDateFormat dateFormats = new SimpleDateFormat ("yyyy-MM-dd");
-    SimpleDateFormat dateTimeFormats = new SimpleDateFormat ("yyyy-MM-dd kk:mm:ss")
 
     def init = { servletContext ->
         Map params = grailsApplication.config.dataSource
@@ -36,7 +33,8 @@ class BootStrap {
             User user = new User(it)
             Role role = Role.get(it.role)
             user.role = role
-            user.birthday = dateFormats.parse(it.birth)
+            user.birthday = ProjectUtils.parseDate(it.birth)
+
             user.address = Address.get(it.addressId)
             user.save(failOnError:true, flush: true)
         }
@@ -53,7 +51,7 @@ class BootStrap {
             User author = User.get(it.authorId)
             article.author = author
             article.save(failOnError:true, flush: true)
-            article.dateCreated = dateTimeFormats.parse(it.publicationDate)
+            article.dateCreated = ProjectUtils.parseDateTime(it.publicationDate)
             article.save(failOnError:true, flush: true)
         }
 
@@ -76,7 +74,7 @@ class BootStrap {
             User author = User.get(it.authorId)
             comment.author = author
             comment.save(failOnError:true, flush: true)
-            comment.dateCreated = dateTimeFormats.parse(it.postedDate)
+            comment.dateCreated = ProjectUtils.parseDateTime(it.postedDate)
             comment.save(failOnError:true, flush: true)
         }
 
@@ -85,7 +83,6 @@ class BootStrap {
 
     def destroy = {
     }
-
 
     static DriverManagerDataSource getDataSource(Map params) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource()
