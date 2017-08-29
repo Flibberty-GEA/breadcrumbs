@@ -77,6 +77,7 @@ dataSource:
     driverClassName: org.h2.Driver
     username: user
     password: pass
+    logSql: false # if "true" then all queries are logged to stdout
 
 environments:
     development:

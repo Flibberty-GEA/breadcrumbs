@@ -41,7 +41,6 @@ class BootStrap {
             article.save(failOnError:true, flush: true)
             article.dateCreated = ProjectUtils.parseDateTime(it.publicationDate)
             author.addToArticles(article)
-            article.save()
         }
 
         Object articleTags = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\ArticlesTags.json")))
@@ -49,7 +48,6 @@ class BootStrap {
             Tag tag = Tag.get(it.tagId)
             Article article = Article.get(it.articleId)
             article.addToTags(tag)
-            article.save()
         }
 
         Object comments = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Comments.json")))
