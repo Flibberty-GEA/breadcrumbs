@@ -6,12 +6,11 @@ import grails.rest.Resource
 class Article extends BasePost {
 
     String title
-//    String content
     User author
-    static belongsTo = User
 
-    static hasMany = [tags: Tag,
-                      comments: Comment]
+    static belongsTo = [author: User]
+
+    static hasMany = [tags: Tag, comments: Comment]
 
     static mapping = {
 //        content type: "text"

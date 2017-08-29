@@ -7,7 +7,6 @@ import grails.rest.Resource
 class Tag {
 
     String name
-
     static belongsTo = Article
     static hasMany = [articles: Article]
 

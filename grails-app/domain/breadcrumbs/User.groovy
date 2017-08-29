@@ -20,7 +20,7 @@ class User {
     Role role
     Address address
 
-    static hasMany = [comments: Comment, articles: Article]
+    static hasMany = [articles: Article]
 
     static mapping = {
         email email: true
@@ -37,9 +37,7 @@ class User {
         ZoneId defaultZoneId = ZoneId.systemDefault()
         Instant instant = birthday.toInstant()
         LocalDate birthday = instant.atZone(defaultZoneId).toLocalDate()
-
         LocalDate currentDate = LocalDate.now()
-
         return Period.between(birthday, currentDate).getYears()
     }
 

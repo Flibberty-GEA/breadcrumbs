@@ -54,11 +54,10 @@ class BootStrap {
         comments.each{
             Comment comment = new Comment(it)
             User author = User.get(it.userId)
+            comment.article = Article.get(it.articleId)
             comment.save(failOnError:true, flush: true)
             comment.dateCreated = ProjectUtils.parseDateTime(it.postedDate)
-            author.addToComments(comment)
-            Article article = Article.get(it.articleId)
-            article.addToComments(comment)
+            comment.save(failOnError:true, flush: true)
         }
     }
 
