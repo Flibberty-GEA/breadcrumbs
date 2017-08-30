@@ -3,7 +3,7 @@ package breadcrumbs
 
 class Comment extends BasePost{
 
-    User author
+    User auth
     Article article
 //    Long targetCommentId
 

@@ -26,6 +26,15 @@ class UserService {
     }
 
     def userByComment(id){
-        return Comment.get(id).author
+        return Comment.get(id).auth
     }
+
+    def deleteRelationshipsWithComments(id) {
+        Comment.findAllWhere([auth:User.get(id)]).each{
+            it.auth = null
+            it.save(flush: true)
+        }
+
+    }
+
 }

@@ -23,8 +23,10 @@ class UserController extends RestfulController {
 
     def index() {
         respond userService.selectUsers(params)
-//        respond params.addressId ?
-//                userService.userByAddress(params.addressId) :
-//                User.getAll()
+    }
+
+    def delete(){
+        userService.deleteRelationshipsWithComments(params.id)
+        super.delete()
     }
 }
