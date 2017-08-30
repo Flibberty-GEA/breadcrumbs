@@ -1,12 +1,9 @@
 package breadcrumbs
 
-import grails.rest.Resource
 
 import java.time.LocalDate
-
 import java.time.*
 
-@Resource(uri = '/user', formats = ["json"])
 class User {
 
     static transients = ['age']

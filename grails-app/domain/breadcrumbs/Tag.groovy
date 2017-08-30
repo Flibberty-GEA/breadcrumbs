@@ -1,9 +1,6 @@
 package breadcrumbs
 
-import grails.rest.Resource
 
-
-@Resource(uri = '/tag', formats = ["json"])
 class Tag {
 
     String name

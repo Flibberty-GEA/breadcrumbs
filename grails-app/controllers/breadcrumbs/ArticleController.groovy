@@ -9,6 +9,7 @@ import static org.springframework.http.HttpStatus.NO_CONTENT
 class ArticleController extends RestfulController {
 	static responseFormats = ['json']
     def articleService
+
     ArticleController() {
         super(Article)
     }
@@ -19,6 +20,12 @@ class ArticleController extends RestfulController {
 
     ArticleController(Class resource, boolean readOnly) {
         super(resource, readOnly)
+    }
+
+    def index() {
+        respond params.userId ?
+                articleService.articleByUser(params.userId) :
+                Article.getAll()
     }
 
     def delete(){

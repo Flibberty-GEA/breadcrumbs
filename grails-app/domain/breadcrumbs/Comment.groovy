@@ -1,10 +1,9 @@
 package breadcrumbs
 
-import grails.rest.Resource
 
-@Resource(uri = '/comment', formats = ["json"])
 class Comment extends BasePost{
 
+    User author
     Article article
 //    Long targetCommentId
 

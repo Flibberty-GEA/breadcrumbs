@@ -12,6 +12,24 @@ class UrlMappings {
 
         "/user"(resources: "user"){
             "/address"(resources: "address")
+            "/role"(resources: "role")
+            "/article"(resources: "article")
+        }
+
+        "/address"(resources: "address"){
+            "/user"(resources: "user")
+        }
+
+        "/article"(resources: "article"){
+            "/user"(resources: "user")
+            "/tag"(resources: "tag")
+            "/comment"(resources: "comment"){
+                "/user"(resources: "user")
+            }
+        }
+
+        "/comment"(resources: "comment"){
+            "/user"(resources: "user")
         }
 
         "/"(controller: 'application', action:'index')
