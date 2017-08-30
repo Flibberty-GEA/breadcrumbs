@@ -1,8 +1,6 @@
 package breadcrumbs
 
-import grails.rest.Resource
 
-@Resource(uri = '/address', formats = ["json"])
 class Address {
 
     String country
