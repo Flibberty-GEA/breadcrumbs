@@ -1,8 +1,5 @@
 package breadcrumbs
 
-import grails.rest.Resource
-
-@Resource(uri = '/article', formats = ["json"])
 class Article extends BasePost {
 
     String title
@@ -14,6 +11,7 @@ class Article extends BasePost {
 
     static mapping = {
 //        content type: "text"
+        comments cascade: "all-delete-orphan"
         tags joinTable: 'TAGS_ARTICLES_ASSOCIATIONS'
     }
 
