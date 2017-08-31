@@ -1,40 +1,25 @@
 package breadcrumbs
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.transactions.Transactional
 
 @Transactional
+@GrailsCompileStatic
 class UserService {
 
-    def selectUsers(params){
-        if (params.addressId) {
-            userByAddress(params.addressId)
-        } else if (params.commentId){
-            userByComment(params.commentId)
-        } else if (params.articleId){
-            userByArticle(params.articleId)
-        }  else {
-            return User.getAll()
+    List<User> selectUsers(Map params){
+        switch (params) {
+            case {params.addressId}: Address.get(params.addressId as Long).users as List; break
+            case {params.commentId}: [Comment.get(params.commentId as Long).auth]; break
+            case {params.articleId}: [Article.get(params.articleId as Long).author]; break
+            default: User.list(params)
         }
     }
 
-    def userByAddress(id){
-        return Address.get(id).users
-    }
-
-    def userByArticle(id){
-        return Article.get(id).author
-    }
-
-    def userByComment(id){
-        return Comment.get(id).auth
-    }
-
-    def deleteRelationshipsWithComments(id) {
+    void deleteRelationshipsWithComments(Long id) {
         Comment.findAllWhere([auth:User.get(id)]).each{
             it.auth = null
             it.save(flush: true)
         }
-
     }
-
 }

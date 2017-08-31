@@ -1,20 +1,20 @@
 package breadcrumbs
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.transactions.Transactional
 
 @Transactional
+@GrailsCompileStatic
 class ArticleService {
 
-    def articleByUser(id) {
-        return User.get(id).articles
-    }
-
-    def deleteArticlesComments(id) {
-        def article = Article.get(id)
-        def comments = []
-        comments += article.comments
-        comments.each{
-            article.removeFromComments(it)
+    void deleteArticleComments(Long id) {
+        Article article = Article.get(id)
+        if (article != null) {
+            List<Comment> comments = []
+            comments += article.comments as List
+            comments.each{
+                article.removeFromComments(it)
+            }
         }
     }
 }

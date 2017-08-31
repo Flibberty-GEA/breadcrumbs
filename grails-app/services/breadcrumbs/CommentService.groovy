@@ -1,11 +1,13 @@
 package breadcrumbs
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.transactions.Transactional
 
 @Transactional
+@GrailsCompileStatic
 class CommentService {
 
-    def commentByArticle(id) {
-        return Article.get(id).comments
+    void someMethod() {
+        // to do nothing
     }
 }

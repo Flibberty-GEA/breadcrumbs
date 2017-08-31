@@ -22,14 +22,16 @@ class ArticleController extends RestfulController {
         super(resource, readOnly)
     }
 
-    def index() {
-        respond params.userId ?
-                articleService.articleByUser(params.userId) :
-                Article.getAll()
+    @Override
+    protected List<Article> listAllResources(Map params) {
+        return params.userId ?
+                User.get(params.userId).articles as List:
+                Article.list(params)
     }
 
+    @Override
     def delete(){
-        articleService.deleteArticlesComments(params.id)
+        articleService.deleteArticleComments(params.id as Long)
         super.delete()
     }
 }

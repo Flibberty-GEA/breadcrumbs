@@ -21,9 +21,10 @@ class RoleController extends RestfulController {
         super(resource, readOnly)
     }
 
-    def index() {
-        respond params.userId ?
-                roleService.roleByUser(params.userId) :
-                Role.getAll()
+    @Override
+    protected List<Role> listAllResources(Map params) {
+        return params.userId ?
+                [Role.get(User.get(params.userId).roleId)] :
+                Role.list(params)
     }
 }

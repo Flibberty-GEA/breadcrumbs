@@ -1,12 +1,13 @@
 package breadcrumbs
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.transactions.Transactional
 
 @Transactional
+@GrailsCompileStatic
 class RoleService {
 
-    def roleByUser(id) {
-        User user = User.get(id)
-        return user.roleId ? [Role.get(user.roleId)] : []
+    void someMethod() {
+        // to do nothing
     }
 }

@@ -21,9 +21,11 @@ class TagController extends RestfulController {
         super(resource, readOnly)
     }
 
-    def index() {
-        respond params.articleId ?
-                tagService.tagByArticle(params.articleId) :
-                Tag.getAll()
+    @Override
+    protected List<Tag> listAllResources(Map params) {
+        return params.articleId ?
+                Article.get(params.articleId).tags as List:
+                Tag.list(params)
     }
+
 }

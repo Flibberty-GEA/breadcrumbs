@@ -21,9 +21,10 @@ class CommentController extends RestfulController {
         super(resource, readOnly)
     }
 
-    def index() {
-        respond params.articleId ?
-                commentService.commentByArticle(params.articleId) :
-                Comment.getAll()
+    @Override
+    protected List<Comment> listAllResources(Map params) {
+        return params.articleId ?
+                Article.get(params.articleId).comments as List:
+                Comment.list(params)
     }
 }

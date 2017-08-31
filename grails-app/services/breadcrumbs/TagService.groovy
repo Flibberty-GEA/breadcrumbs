@@ -1,11 +1,13 @@
 package breadcrumbs
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.transactions.Transactional
 
 @Transactional
+@GrailsCompileStatic
 class TagService {
 
-    def tagByArticle(id) {
-        return Article.get(id).tags
+    void someMethod() {
+        // to do nothing
     }
 }

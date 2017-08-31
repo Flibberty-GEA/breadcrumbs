@@ -21,10 +21,11 @@ class AddressController extends RestfulController {
         super(resource, readOnly)
     }
 
-    def index() {
-        respond params.userId ?
-                addressService.adressByUser(params.userId) :
-                Address.getAll()
+    @Override
+    protected List<Address> listAllResources(Map params) {
+        return params.userId ?
+            addressService.findByUserId(params.userId as Long) :
+            Address.list(params)
     }
 
 }

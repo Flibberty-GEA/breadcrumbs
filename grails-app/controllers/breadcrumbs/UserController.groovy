@@ -21,12 +21,15 @@ class UserController extends RestfulController {
         super(resource, readOnly)
     }
 
-    def index() {
-        respond userService.selectUsers(params)
+    @Override
+    protected List<User> listAllResources(Map params) {
+        userService.selectUsers(params)
     }
 
+    @Override
     def delete(){
-        userService.deleteRelationshipsWithComments(params.id)
+        userService.deleteRelationshipsWithComments(params.id as Long)
         super.delete()
     }
+
 }
