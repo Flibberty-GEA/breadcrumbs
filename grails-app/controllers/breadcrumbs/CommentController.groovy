@@ -27,4 +27,11 @@ class CommentController extends RestfulController {
                 Article.get(params.articleId).comments as List:
                 Comment.list(params)
     }
+
+    @Override
+    protected Integer countResources() {
+        return params.articleId ?
+                Article.get(params.articleId).comments.size() :
+                Comment.count()
+    }
 }

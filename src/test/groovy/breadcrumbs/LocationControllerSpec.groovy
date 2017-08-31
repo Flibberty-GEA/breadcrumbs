@@ -3,7 +3,7 @@ package breadcrumbs
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class AddressControllerSpec extends Specification implements ControllerUnitTest<AddressController> {
+class LocationControllerSpec extends Specification implements ControllerUnitTest<LocationController> {
 
     def setup() {
     }

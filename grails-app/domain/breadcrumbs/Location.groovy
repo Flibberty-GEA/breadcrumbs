@@ -1,7 +1,7 @@
 package breadcrumbs
 
 
-class Address {
+class Location {
 
     String country
     String city
@@ -9,7 +9,7 @@ class Address {
     static hasMany = [users: User]
 
     static mapping = {
-//        users column: 'address_id' // default 'address_id'
+//        users column: 'location_id' // default 'location_id'
     }
 
     static constraints = {

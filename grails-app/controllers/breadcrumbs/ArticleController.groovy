@@ -30,8 +30,17 @@ class ArticleController extends RestfulController {
     }
 
     @Override
+    protected Integer countResources() {
+        return params.userId ?
+                User.get(params.userId).articles.size() :
+                Article.count()
+    }
+
+    @Override
     def delete(){
         articleService.deleteArticleComments(params.id as Long)
         super.delete()
     }
+
+
 }

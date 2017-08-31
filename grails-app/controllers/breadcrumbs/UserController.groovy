@@ -23,13 +23,29 @@ class UserController extends RestfulController {
 
     @Override
     protected List<User> listAllResources(Map params) {
-        userService.selectUsers(params)
+        listRelatedResources(params)
+    }
+
+    private List<User> listRelatedResources(Map params){
+        switch (params) {
+            case {params.locationId}: Location.get(params.locationId as Long).users as List; break
+            case {params.commentId}: [Comment.get(params.commentId as Long).auth]; break
+            case {params.articleId}: [Article.get(params.articleId as Long).author]; break
+            default: User.list(params)
+        }
     }
 
     @Override
     def delete(){
         userService.deleteRelationshipsWithComments(params.id as Long)
         super.delete()
+    }
+
+    @Override
+    protected Integer countResources() {
+        params.keySet().find{it.matches('.*Id$')}?
+                listRelatedResources(params).size() :
+                User.count()
     }
 
 }

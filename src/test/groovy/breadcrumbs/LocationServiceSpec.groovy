@@ -3,7 +3,7 @@ package breadcrumbs
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class AddressServiceSpec extends Specification implements ServiceUnitTest<AddressService>{
+class LocationServiceSpec extends Specification implements ServiceUnitTest<LocationService>{
 
     def setup() {
     }

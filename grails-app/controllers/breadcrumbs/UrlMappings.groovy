@@ -11,12 +11,12 @@ class UrlMappings {
         patch "/$controller/$id(.$format)?"(action:"patch")
 
         "/user"(resources: "user"){
-            "/address"(resources: "address")
+            "/location"(resources: "location")
             "/role"(resources: "role")
             "/article"(resources: "article")
         }
 
-        "/address"(resources: "address"){
+        "/location"(resources: "location"){
             "/user"(resources: "user")
         }
 

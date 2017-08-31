@@ -28,4 +28,11 @@ class TagController extends RestfulController {
                 Tag.list(params)
     }
 
+    @Override
+    protected Integer countResources() {
+        return params.articleId ?
+                Article.get(params.articleId).tags.size() :
+                Tag.count()
+    }
+
 }

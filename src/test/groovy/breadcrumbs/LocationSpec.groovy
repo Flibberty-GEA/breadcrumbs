@@ -3,7 +3,7 @@ package breadcrumbs
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class AddressSpec extends Specification implements DomainUnitTest<Address> {
+class LocationSpec extends Specification implements DomainUnitTest<Location> {
 
     def setup() {
     }

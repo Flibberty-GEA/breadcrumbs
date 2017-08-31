@@ -27,4 +27,9 @@ class RoleController extends RestfulController {
                 [Role.get(User.get(params.userId).roleId)] :
                 Role.list(params)
     }
+
+    @Override
+    protected Integer countResources() {
+        return params.userId ? 1 : Role.count()
+    }
 }

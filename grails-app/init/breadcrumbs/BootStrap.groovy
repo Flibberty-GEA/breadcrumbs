@@ -11,10 +11,10 @@ class BootStrap {
             role.save(failOnError:true, flush: true)
         }
 
-        Object addresses = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Addresses.json")))
-        addresses.each{
-            Address address = new Address(it)
-            address.save(failOnError:true, flush: true)
+        Object locations = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Addresses.json")))
+        locations.each{
+            Location location = new Location(it)
+            location.save(failOnError:true, flush: true)
         }
 
         Object users = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Users.json")))
@@ -23,7 +23,7 @@ class BootStrap {
             Role role = Role.get(it.role)
             user.role = role
             user.birthday = ProjectUtils.parseDate(it.birth)
-            user.address = Address.get(it.addressId)
+            user.location = Location.get(it.addressId)
             user.save(failOnError:true, flush: true)
         }
 

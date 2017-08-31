@@ -15,18 +15,14 @@ class User {
     String email
     Date birthday
     Role role
-    Address address
+    Location location
 
     static hasMany = [articles: Article]
-
-    static mapping = {
-        email email: true
-    }
 
     static constraints = {
         username nullable: false
         password nullable: false
-        email nullable: false
+        email nullable: false, email: true
         role nullable: false
     }
 
