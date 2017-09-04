@@ -1,6 +1,6 @@
 package breadcrumbs
 
-
+import grails.gorm.transactions.Transactional
 import grails.rest.*
 import grails.converters.*
 import grails.rest.RestfulController
@@ -36,6 +36,7 @@ class UserController extends RestfulController {
     }
 
     @Override
+    @Transactional
     def delete(){
         userService.deleteRelationshipsWithComments(params.id as Long)
         super.delete()
@@ -43,9 +44,16 @@ class UserController extends RestfulController {
 
     @Override
     protected Integer countResources() {
-        params.keySet().find{it.matches('.*Id$')}?
-                listRelatedResources(params).size() :
-                User.count()
+        if(params.keySet().find{it.matches('.*Id$')}) {
+            switch (params) {
+                case { params.locationId }: return User.countByLocation(Location.get(params.locationId as Long)); break
+                case { params.commentId }: return 1; break
+                case { params.articleId }: return 1; break
+                default: User.count()
+            }
+        } else {
+            User.count()
+        }
     }
 
 }

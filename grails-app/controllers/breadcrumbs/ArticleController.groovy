@@ -1,5 +1,6 @@
 package breadcrumbs
 
+import grails.gorm.transactions.Transactional
 import grails.rest.*
 import grails.converters.*
 import grails.rest.RestfulController
@@ -29,14 +30,16 @@ class ArticleController extends RestfulController {
                 Article.list(params)
     }
 
+
     @Override
     protected Integer countResources() {
         return params.userId ?
-                User.get(params.userId).articles.size() :
+                Article.countByAuthor(User.get(params.userId)) :
                 Article.count()
     }
 
     @Override
+    @Transactional
     def delete(){
         articleService.deleteArticleComments(params.id as Long)
         super.delete()

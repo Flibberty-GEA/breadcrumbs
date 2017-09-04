@@ -30,9 +30,7 @@ class LocationController extends RestfulController {
 
     @Override
     protected Integer countResources() {
-        return params.userId ?
-                listResourcesByUserId(params.userId as Long).size() :
-                Location.count()
+        return params.userId ? 1 : Location.count()
     }
 
     private List<Location> listResourcesByUserId(Long id) {

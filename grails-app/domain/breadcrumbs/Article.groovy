@@ -13,6 +13,7 @@ class Article extends BasePost {
 //        content type: "text"
         comments cascade: "all-delete-orphan"
         tags joinTable: 'TAGS_ARTICLES_ASSOCIATIONS'
+        author updateable: false
     }
 
     static constraints = {

@@ -32,4 +32,5 @@ class RoleController extends RestfulController {
     protected Integer countResources() {
         return params.userId ? 1 : Role.count()
     }
+
 }
