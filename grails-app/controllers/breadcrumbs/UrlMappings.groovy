@@ -26,6 +26,7 @@ class UrlMappings {
             "/comment"(resources: "comment"){
                 "/user"(resources: "user")
             }
+
         }
 
         "/comment"(resources: "comment"){

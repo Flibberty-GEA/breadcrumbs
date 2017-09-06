@@ -53,11 +53,13 @@ class BootStrap {
         Object comments = new JsonSlurper().parse(new File(ProjectUtils.getCorrectPathOS("src\\main\\resources\\Comments.json")))
         comments.each{
             Comment comment = new Comment(it)
-            comment.auth = User.get(it.userId)
+//            comment.auth = User.get(it.userId)
             comment.article = Article.get(it.articleId)
             comment.save(failOnError:true, flush: true)
             comment.dateCreated = ProjectUtils.parseDateTime(it.postedDate)
-            comment.save(failOnError:true, flush: true)
+            User auth = User.get(it.userId)
+            auth.addToComments(comment)
+//            comment.save(failOnError:true, flush: true)
         }
     }
 

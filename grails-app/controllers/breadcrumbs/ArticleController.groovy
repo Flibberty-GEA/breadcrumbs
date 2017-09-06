@@ -7,7 +7,7 @@ import grails.rest.RestfulController
 
 import static org.springframework.http.HttpStatus.NO_CONTENT
 
-class ArticleController extends RestfulController {
+class ArticleController extends BaseController<Article> {
 	static responseFormats = ['json']
     def articleService
 
@@ -24,10 +24,8 @@ class ArticleController extends RestfulController {
     }
 
     @Override
-    protected List<Article> listAllResources(Map params) {
-        return params.userId ?
-                User.get(params.userId).articles as List:
-                Article.list(params)
+    protected List<Article> listRelatedResources(Map params) {
+                User.get(params.userId).articles as List
     }
 
 

@@ -5,7 +5,7 @@ import grails.rest.*
 import grails.converters.*
 import grails.rest.RestfulController
 
-class LocationController extends RestfulController {
+class LocationController extends BaseController<Location> {
 	static responseFormats = ['json']
     def locationService
 
@@ -22,10 +22,9 @@ class LocationController extends RestfulController {
     }
 
     @Override
-    protected List<Location> listAllResources(Map params) {
-        return params.userId ?
-                listResourcesByUserId(params.userId as Long):
-                Location.list(params)
+    protected List<Location> listRelatedResources(Map params) {
+        User user = User.get(params.userId as Long)
+        return user.locationId ? [Location.get(user.locationId as Long)] : []
     }
 
     @Override
@@ -33,10 +32,10 @@ class LocationController extends RestfulController {
         return params.userId ? 1 : Location.count()
     }
 
-    private List<Location> listResourcesByUserId(Long id) {
-        User user = User.get(id)
-        return user.locationId ? [Location.get(user.locationId as Long)] : []
-        //        return user.locationId ? Location.findAllByUsersInList([user], params) : []
-    }
+//    private List<Location> listResourcesByUserId(Long id) {
+//        User user = User.get(params.userId as Long)
+//        return user.locationId ? [Location.get(user.locationId as Long)] : []
+//        //        return user.locationId ? Location.findAllByUsersInList([user], params) : []
+//    }
 
 }

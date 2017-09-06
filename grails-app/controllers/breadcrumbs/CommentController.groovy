@@ -5,7 +5,7 @@ import grails.rest.*
 import grails.converters.*
 import grails.rest.RestfulController
 
-class CommentController extends RestfulController {
+class CommentController extends BaseController<Comment> {
 	static responseFormats = ['json']
     def commentService
 
@@ -23,16 +23,24 @@ class CommentController extends RestfulController {
 
     @Override
     protected List<Comment> listAllResources(Map params) {
-        return params.articleId ?
-                Article.get(params.articleId).comments as List:
-                Comment.list(params)
+        Comment.createCriteria().list{
+            selectRestrictions(delegate)
+        }
     }
 
     @Override
-    protected Integer countResources() {
-        return params.articleId ?
-                Comment.countByArticle(Article.get(params.articleId)) :
-                Comment.count()
+    protected Integer countResources(){
+        Comment.createCriteria().get{
+            projections {
+                rowCount()
+            }
+            selectRestrictions(delegate)
+        }
     }
 
+    Closure selectRestrictions = { delegate ->
+        switch (params) {
+            case {params.articleId}: delegate.article{eq("id", params.articleId as Long)}; break
+        }
+    }
 }

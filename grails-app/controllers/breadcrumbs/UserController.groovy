@@ -22,49 +22,19 @@ class UserController extends BaseController<User> {
         super(resource, readOnly)
     }
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        def relatedResourceId = params.keySet().find{it.matches('.*Id$')}
-
-        if(!relatedResourceId){
-            respond(listAllResources(params), model: [("${resourceName}Count".toString()): countResources()])
-        } else {
-            String keyName = "${resourceName}Count".toString()
-            switch (params) {
-                case {params.locationId}: respond(listUsersByLocation(params),
-                                        model: [(keyName): countUserByLocation()]); break
-                case {params.commentId}: respond([findAuthor()],
-                                        model: [(keyName): 1]); break
-                case {params.articleId}: respond([findAuthor()],
-                                        model: [(keyName): 1]); break
-                default: throw new Exception("There is no case with ${relatedResourceId} in ${this.class.name}. " +
-                        "It should be added into switch.")
-            }
-        }
-    }
-
-    protected Integer countUserByLocation() {
-        def criteria = User.createCriteria()
-        criteria.get{
-            projections {
-                rowCount()
-            }
-            location{
-                eq("id", params.locationId as Long)
-            }
-        }
-    }
-
-    private List<User> listUsersByLocation(Map params){
-        def criteria = User.createCriteria()
-        criteria.list{
+    @Override
+    protected List<User> listAllResources(Map params){
+        User.createCriteria().list{
             selectRestrictions(delegate)
         }
     }
 
-    private User findAuthor(){
-        def criteria = User.createCriteria()
-        criteria.get{
+    @Override
+    protected Integer countResources(){
+        User.createCriteria().get{
+            projections {
+                rowCount()
+            }
             selectRestrictions(delegate)
         }
     }
@@ -77,18 +47,10 @@ class UserController extends BaseController<User> {
     }
 
     Closure selectRestrictions = { delegate ->
-        if (params.locationId) {
-            delegate.location {
-                eq("id", params.locationId as Long)
-            }
-        } else if (params.commentId) {
-            delegate.comments {
-                eq("id", params.commentId as Long)
-            }
-        } else if (params.articleId) {
-            delegate.articles {
-                eq("id", params.articleId as Long)
-            }
+        switch (params) {
+            case {params.locationId}: delegate.location { eq("id", params.locationId as Long) }; break
+            case {params.commentId}: delegate.comments { eq("id", params.commentId as Long) }; break
+            case {params.articleId}: delegate.articles { eq("id", params.articleId as Long) }; break
         }
     }
 

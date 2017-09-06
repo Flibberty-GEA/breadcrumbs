@@ -17,7 +17,7 @@ class User {
     Role role
     Location location
 
-    static hasMany = [articles: Article]
+    static hasMany = [articles: Article, comments: Comment]
 
     static constraints = {
         username nullable: false

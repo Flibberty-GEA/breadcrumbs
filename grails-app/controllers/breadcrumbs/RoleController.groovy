@@ -5,7 +5,7 @@ import grails.rest.*
 import grails.converters.*
 import grails.rest.RestfulController
 
-class RoleController extends RestfulController {
+class RoleController extends BaseController<Role> {
 	static responseFormats = ['json']
     def roleService
 
@@ -22,10 +22,8 @@ class RoleController extends RestfulController {
     }
 
     @Override
-    protected List<Role> listAllResources(Map params) {
-        return params.userId ?
-                [Role.get(User.get(params.userId).roleId)] :
-                Role.list(params)
+    protected List<Role> listRelatedResources(Map params) {
+                [Role.get(User.get(params.userId).roleId)]
     }
 
     @Override
