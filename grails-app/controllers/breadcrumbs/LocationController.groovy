@@ -21,10 +21,12 @@ class LocationController extends BaseController<Location> {
         super(resource, readOnly)
     }
 
+
     @Override
-    protected List<Location> listRelatedResources(Map params) {
-        User user = User.get(params.userId as Long)
-        return user.locationId ? [Location.get(user.locationId as Long)] : []
+    protected List<Location> listAllResources(Map params){
+        Location.createCriteria().list{
+            selectRestrictions(delegate)
+        }
     }
 
     @Override
@@ -32,10 +34,21 @@ class LocationController extends BaseController<Location> {
         return params.userId ? 1 : Location.count()
     }
 
-//    private List<Location> listResourcesByUserId(Long id) {
-//        User user = User.get(params.userId as Long)
-//        return user.locationId ? [Location.get(user.locationId as Long)] : []
-//        //        return user.locationId ? Location.findAllByUsersInList([user], params) : []
+//    @Override
+//    protected Integer countResources(){
+//        Location.createCriteria().get{
+//            projections {
+//                rowCount()
+//            }
+//            selectRestrictions(delegate)
+//        }
 //    }
+
+    Closure selectRestrictions = { delegate ->
+        switch (params) {
+            case {params.userId}: delegate.users{ eq("id", params.userId as Long) }; break
+        }
+    }
+
 
 }

@@ -24,16 +24,27 @@ class ArticleController extends BaseController<Article> {
     }
 
     @Override
-    protected List<Article> listRelatedResources(Map params) {
-                User.get(params.userId).articles as List
+    protected List<Article> listAllResources(Map params) {
+        Article.createCriteria().list{
+            selectRestrictions(delegate)
+        }
     }
 
-
     @Override
-    protected Integer countResources() {
-        return params.userId ?
-                Article.countByAuthor(User.get(params.userId)) :
-                Article.count()
+    protected Integer countResources(){
+        Article.createCriteria().get{
+            projections {
+                rowCount()
+            }
+            selectRestrictions(delegate)
+        }
+    }
+
+    Closure selectRestrictions = { delegate ->
+        switch (params) {
+            case {params.userId}: delegate.author{eq("id", params.userId as Long)}; break
+            case {params.tagId}: delegate.tags{eq("id", params.tagId as Long)}; break
+        }
     }
 
     @Override
@@ -42,6 +53,5 @@ class ArticleController extends BaseController<Article> {
         articleService.deleteArticleComments(params.id as Long)
         super.delete()
     }
-
 
 }

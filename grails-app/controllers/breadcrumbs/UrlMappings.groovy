@@ -16,6 +16,10 @@ class UrlMappings {
             "/article"(resources: "article")
         }
 
+        "/tag"(resources: "tag"){
+            "/article"(resources: "article")
+        }
+
         "/location"(resources: "location"){
             "/user"(resources: "user")
         }
@@ -26,7 +30,6 @@ class UrlMappings {
             "/comment"(resources: "comment"){
                 "/user"(resources: "user")
             }
-
         }
 
         "/comment"(resources: "comment"){

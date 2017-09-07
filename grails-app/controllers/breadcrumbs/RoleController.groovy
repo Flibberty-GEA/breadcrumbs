@@ -22,13 +22,31 @@ class RoleController extends BaseController<Role> {
     }
 
     @Override
-    protected List<Role> listRelatedResources(Map params) {
-                [Role.get(User.get(params.userId).roleId)]
+    protected List<Role> listAllResources(Map params){
+        Role.createCriteria().list{
+            selectRestrictions(delegate)
+        }
     }
 
     @Override
     protected Integer countResources() {
         return params.userId ? 1 : Role.count()
+    }
+
+//    @Override
+//    protected Integer countResources(){
+//        Role.createCriteria().get{
+//            projections {
+//                rowCount()
+//            }
+//            selectRestrictions(delegate)
+//        }
+//    }
+
+    Closure selectRestrictions = { delegate ->
+        switch (params) {
+            case {params.userId}: delegate.users{ eq("id", params.userId as Long) }; break
+        }
     }
 
 }

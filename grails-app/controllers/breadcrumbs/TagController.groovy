@@ -24,29 +24,28 @@ class TagController extends BaseController<Tag> {
         super(resource, readOnly)
     }
 
+
     @Override
-    protected List<Tag> listRelatedResources(Map params) {
-                Article.get(params.articleId).tags as List
+    protected List<Tag> listAllResources(Map params){
+        Tag.createCriteria().list{
+            selectRestrictions(delegate)
+        }
     }
 
     @Override
-    protected Integer countResources() {
-        return params.articleId ? countTagsByArticle() : Tag.count()
-//        return params.articleId ?
-//                Tag.executeQuery("select count(*) from Tag as t join t.articles as a " +
-//                        "where a = :b", [b: Article.get(params.articleId)])[0]:
-//                Tag.count()
-    }
-
-    private Integer countTagsByArticle(){
-        def criteria = Tag.createCriteria()
-        criteria.get{
+    protected Integer countResources(){
+        Tag.createCriteria().get{
             projections {
                 rowCount()
             }
-            articles{
-                eq("id", params.articleId as Long)
-            }
+            selectRestrictions(delegate)
+        }
+    }
+
+
+    Closure selectRestrictions = { delegate ->
+        switch (params) {
+            case {params.articleId}: delegate.articles{ eq("id", params.articleId as Long) }; break
         }
     }
 }

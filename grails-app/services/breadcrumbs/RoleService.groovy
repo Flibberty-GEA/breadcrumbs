@@ -5,7 +5,7 @@ import grails.gorm.transactions.Transactional
 
 @Transactional
 @GrailsCompileStatic
-class RoleService {
+class RoleService extends BaseService {
 
     void someMethod() {
         // to do nothing

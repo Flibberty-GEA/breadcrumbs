@@ -5,7 +5,7 @@ import grails.gorm.transactions.Transactional
 
 @Transactional
 @GrailsCompileStatic
-class ArticleService {
+class ArticleService extends BaseService {
 
     void deleteArticleComments(Long id) {
         Article article = Article.get(id)

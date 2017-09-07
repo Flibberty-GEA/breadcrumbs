@@ -43,4 +43,5 @@ class CommentController extends BaseController<Comment> {
             case {params.articleId}: delegate.article{eq("id", params.articleId as Long)}; break
         }
     }
+
 }
