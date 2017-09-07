@@ -25,7 +25,7 @@ class ArticleController extends BaseController<Article> {
 
     @Override
     protected List<Article> listAllResources(Map params) {
-        Article.createCriteria().list{
+        Article.createCriteria().list(max: params.max, offset: params.offset){
             selectRestrictions(delegate)
         }
     }

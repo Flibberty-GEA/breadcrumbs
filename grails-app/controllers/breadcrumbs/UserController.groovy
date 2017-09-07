@@ -24,7 +24,7 @@ class UserController extends BaseController<User> {
 
     @Override
     protected List<User> listAllResources(Map params){
-        User.createCriteria().list{
+        User.createCriteria().list(max: params.max, offset: params.offset){
             selectRestrictions(delegate)
         }
     }

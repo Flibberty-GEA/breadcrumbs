@@ -27,7 +27,7 @@ class TagController extends BaseController<Tag> {
 
     @Override
     protected List<Tag> listAllResources(Map params){
-        Tag.createCriteria().list{
+        Tag.createCriteria().list(max: params.max, offset: params.offset){
             selectRestrictions(delegate)
         }
     }

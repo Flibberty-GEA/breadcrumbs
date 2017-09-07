@@ -24,7 +24,7 @@ class LocationController extends BaseController<Location> {
 
     @Override
     protected List<Location> listAllResources(Map params){
-        Location.createCriteria().list{
+        Location.createCriteria().list(max: params.max, offset: params.offset){
             selectRestrictions(delegate)
         }
     }

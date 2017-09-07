@@ -23,7 +23,7 @@ class RoleController extends BaseController<Role> {
 
     @Override
     protected List<Role> listAllResources(Map params){
-        Role.createCriteria().list{
+        Role.createCriteria().list(max: params.max, offset: params.offset){
             selectRestrictions(delegate)
         }
     }

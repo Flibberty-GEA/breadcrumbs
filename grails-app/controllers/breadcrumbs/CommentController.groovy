@@ -23,7 +23,7 @@ class CommentController extends BaseController<Comment> {
 
     @Override
     protected List<Comment> listAllResources(Map params) {
-        Comment.createCriteria().list{
+        Comment.createCriteria().list(max: params.max, offset: params.offset){
             selectRestrictions(delegate)
         }
     }
