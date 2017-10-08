@@ -18,7 +18,7 @@ class User {
     String email
     Date birthday
     Role role
-    Address address
+    Location location
 
     static hasMany = [articles: Article]
 

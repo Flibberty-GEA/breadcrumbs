@@ -2,8 +2,8 @@ package breadcrumbs
 
 import grails.rest.Resource
 
-@Resource(uri = '/address', formats = ["json"])
-class Address {
+@Resource(uri = '/location', formats = ["json"])
+class Location {
 
     String country
     String city
@@ -11,7 +11,7 @@ class Address {
     static hasMany = [users: User]
 
     static mapping = {
-//        users column: 'address_id' // default 'address_id'
+//        users column: 'location_id' // default 'location_id'
     }
 
     static constraints = {
