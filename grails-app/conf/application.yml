@@ -31,6 +31,13 @@ endpoints:
 
 ---
 grails:
+    cors:
+        # Add Access-Control-Allow-Origin
+        enabled: true
+        allowedOrigins: ['http://localhost:4200']
+
+---
+grails:
     mime:
         disable:
             accept:
@@ -110,3 +117,6 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+
+
